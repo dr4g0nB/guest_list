@@ -8,12 +8,16 @@ new Vue({
     },
     newNameText: '',
     guestName: [],
+    formSumbitClass: ""
   },
   methods: {
     formSubmitted: function() {
       //this allows access to all properties of newNameText
-      this.guestName.push(this.newNameText)
-      this.newNameText = ''
+      if(this.newNameText.length > 0) {
+        this.guestName.push(this.newNameText)
+        this.newNameText = ''
+        this.formSubmitClass = "submitted"
+      }
     }
   },
 });
